@@ -1,5 +1,18 @@
-// GET https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products
+const { Pool } = require('pg');
 
+const pool = new Pool({
+  user: 'node_user',
+  host: 'localhost',
+  database: 'overview',
+  password: 'node_password',
+  port: 5432,
+});
+
+
+
+
+
+// GET https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/products
 
 // [
 //   {

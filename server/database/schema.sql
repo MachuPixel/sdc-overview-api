@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS overview;
-CREATE DATABASE overview;
+-- DROP DATABASE IF EXISTS overview;
+-- CREATE DATABASE overview;
 
 
 CREATE TABLE products (
