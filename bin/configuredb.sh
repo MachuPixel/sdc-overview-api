@@ -1,6 +1,6 @@
 #!/bin/bash
 
-database = "overview"
+database="overview"
 
 echo "Configuring database: $database"
 
