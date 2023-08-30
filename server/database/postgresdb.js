@@ -10,7 +10,20 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
+const getProducts = (cb) => {
 
+  pool.query('SELECT * FROM products', (err, res) => {
+    if (err) {
+      cb (err);
+    } else {
+      cb(null, res.rows);
+    }
+  })
+
+};
+
+// module.exports.pool = pool;
+module.exports = { getProducts };
 
 
 
