@@ -5,6 +5,8 @@ const { getProducts } = require('./database/postgresdb.js')
 
 const app = express();
 
+// GET /products
+
 app.get('/products',(req, res) => {
   getProducts((err, data) => {
     if (err) {
@@ -15,6 +17,44 @@ app.get('/products',(req, res) => {
     }
   });
 });
+
+//GET /products/:product_id
+
+app.get('/products/:product_id',(req, res) => {
+  console.log(req.params);
+
+  // adding features
+//   {
+//     "id": 11,
+//     "name": "Air Minis 250",
+//     "slogan": "Full court support",
+//     "description": "This optimized air cushion pocket reduces impact but keeps a perfect balance underfoot.",
+//     "category": "Basketball Shoes",
+//     "default_price": "0",
+//     "features": [
+//   	{
+//             "feature": "Sole",
+//             "value": "Rubber"
+//         },
+//   	{
+//             "feature": "Material",
+//             "value": "FullControlSkin"
+//         },
+//   	// ...
+//     ],
+// }
+
+  res.send('each individule product with features');
+});
+
+
+// GET /products/:product_id/styles
+
+app.get('/products/:product_id/styles', (req, res) => {
+  console.log(req.params);
+
+  res.send('each individule product with styles and skus');
+})
 
 
 app.listen(process.env.PORT1, () => {
