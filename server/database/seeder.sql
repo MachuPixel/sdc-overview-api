@@ -8,4 +8,4 @@
 
 \copy stock FROM './sampledata/skusSAMPLE.csv' DELIMITER ',' CSV HEADER;
 
-\copy stock FROM './sampledata/relatedSAMPLE.csv' DELIMITER ',' CSV HEADER;
+\copy related FROM './sampledata/relatedSAMPLE.csv' DELIMITER ',' CSV HEADER;
