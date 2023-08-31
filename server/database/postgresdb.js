@@ -10,14 +10,29 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
-const getProducts = (cb) => {
-  pool.query('SELECT * FROM products LIMIT 10', (err, res) => {
-    if (err) {
-      cb (err);
-    } else {
-      cb(null, res.rows);
-    }
-  })
+const getProducts = async(cb) => {
+  try {
+    const productsQuery = `
+    SELECT
+      p.product_id AS id,
+      p.product_name AS name,
+      p.product_slogan AS slogan,
+      p.product_description AS description,
+      p.product_category AS category,
+      p.product_default_price AS default_price
+    FROM products AS p
+    LIMIT 10
+  `;
+    const productsResult = await pool.query(productsQuery);
+    const products = productsResult.rows;
+
+    cb(null, products);
+
+  } catch (err) {
+    console.log(`Error while getting products:`, err);
+    cb(err);
+  }
+
 
 };
 
