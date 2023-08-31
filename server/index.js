@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
-const { getProducts, getFeatures } = require('./database/postgresdb.js')
+const { getProducts, getFeatures, getStyles } = require('./database/postgresdb.js')
 
 const app = express();
 
@@ -57,10 +57,16 @@ app.get('/products/:product_id',(req, res) => {
 // GET /products/:product_id/styles
 
 app.get('/products/:product_id/styles', (req, res) => {
-  console.log(req.params);
 
-  res.send('each individule product with styles and skus');
-})
+  getStyles(req.params.product_id, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.status(404);
+    } else {
+      res.send(data);
+    }
+  });
+});
 
 
 app.listen(process.env.PORT1, () => {
