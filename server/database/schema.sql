@@ -44,3 +44,10 @@ CREATE TABLE stock (
   stock_quantity INTEGER NOT NULL,
   CONSTRAINT fk_style FOREIGN KEY(style_id) REFERENCES styles(style_id)
 );
+
+CREATE TABLE related (
+  related_id SERIAL PRIMARY KEY,
+  current_product_id SERIAL,
+  related_product_id SERIAL,
+  CONSTRAINT fk_current_product FOREIGN KEY(current_product_id) REFERENCES products(product_id)
+);

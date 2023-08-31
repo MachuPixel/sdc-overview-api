@@ -37,22 +37,6 @@ const getProducts = async(cb) => {
 };
 
 const getFeatures = async (product_id, cb) => {
-  // try {
-  //   const productQuery = `SELECT * FROM products WHERE product_id = ${product_id}`;
-  //   const productResult = await pool.query(productQuery);
-  //   const productObj = productResult.rows[0];
-
-  //   const featuresQuery = `SELECT feature_name, feature_value FROM features WHERE product_id = ${product_id}`;
-  //   const featuresResult = await pool.query(featuresQuery);
-  //   const features = featuresResult.rows;
-
-  //   productObj.features = features;
-
-  //   cb(null, productObj);
-  // } catch (err) {
-  //   console.log(`Error while getting features for product ${product_id}:`, err);
-  //   cb(err);
-  // }
   try {
     const featuresQuery = `
       SELECT
@@ -122,12 +106,33 @@ const getStyles = async (product_id, cb) => {
 };
 
 
+const getRelated = async (product_id, cb) => {
+  try {
+    const relatedQuery = `
+      SELECT related_product_id
+      FROM related
+      WHERE current_product_id = $1;
+    `;
+
+    const relatedResult = await pool.query(relatedQuery, [product_id]);
+    const relatedProductIDs = relatedResult.rows.map(row => row.related_product_id);
+
+    cb(null, relatedProductIDs);
+  } catch (err) {
+    console.log(`Error while getting related products for product ${product_id}:`, err);
+    cb(err);
+  }
+};
+
+
+
 
 // module.exports.pool = pool;
 module.exports = {
   getProducts,
   getFeatures,
-  getStyles
+  getStyles,
+  getRelated
  };
 
 

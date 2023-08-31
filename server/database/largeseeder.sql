@@ -7,3 +7,5 @@
 \copy photos FROM './largedata/photos.csv' DELIMITER ',' CSV HEADER;
 
 \copy stock FROM './largedata/skus.csv' DELIMITER ',' CSV HEADER;
+
+\copy related FROM './largedata/related.csv' DELIMITER ',' CSV HEADER;
