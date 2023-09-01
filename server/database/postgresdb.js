@@ -10,8 +10,9 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
-const getProducts = async(cb) => {
+const getProducts = async(page, count, cb) => {
   try {
+    const offset = (page - 1) * count;
     const productsQuery = `
     SELECT
       p.product_id AS id,
@@ -21,10 +22,14 @@ const getProducts = async(cb) => {
       p.product_category AS category,
       p.product_default_price AS default_price
     FROM products AS p
-    LIMIT 10
+    LIMIT $1 OFFSET $2
   `;
-    const productsResult = await pool.query(productsQuery);
+
+    const t0 = performance.now();
+    const productsResult = await pool.query(productsQuery, [count, offset]);
+    const t1 = performance.now();
     const products = productsResult.rows;
+    console.log(`Call to getProducts took ${t1 - t0} milliseconds.`);
 
     cb(null, products);
 
@@ -56,7 +61,11 @@ const getFeatures = async (product_id, cb) => {
       GROUP BY p.product_id;
     `;
 
+    const t0 = performance.now();
     const featuresResult = await pool.query(featuresQuery, [product_id]);
+    const t1 = performance.now();
+    console.log(`Call to getFeatures took ${t1 - t0} milliseconds.`);
+
     const features = featuresResult.rows[0];
     cb(null, features);
   } catch (err) {
@@ -90,7 +99,11 @@ const getStyles = async (product_id, cb) => {
       ORDER BY s.style_id;
     `;
 
+    const t0 = performance.now();
     const stylesResult = await pool.query(stylesQuery, [product_id]);
+    const t1 = performance.now();
+    console.log(`Call to getStyles took ${t1 - t0} milliseconds.`);
+
     const styles = stylesResult.rows;
 
     const response = {
@@ -114,7 +127,12 @@ const getRelated = async (product_id, cb) => {
       WHERE current_product_id = $1;
     `;
 
+    const t0 = performance.now();
     const relatedResult = await pool.query(relatedQuery, [product_id]);
+    const t1 = performance.now();
+    console.log(`Call to getRelated took ${t1 - t0} milliseconds.`);
+
+
     const relatedProductIDs = relatedResult.rows.map(row => row.related_product_id);
 
     cb(null, relatedProductIDs);

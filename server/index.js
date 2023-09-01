@@ -16,7 +16,10 @@ app.use(
 // GET /products
 
 app.get('/products',(req, res) => {
-  getProducts((err, data) => {
+  let page = parseInt(req.query.page, 10) || 1;
+  let count = parseInt(req.query.count, 10) || 5;
+
+  getProducts(page, count, (err, data) => {
     if (err) {
       console.log(err);
       res.status(404);
