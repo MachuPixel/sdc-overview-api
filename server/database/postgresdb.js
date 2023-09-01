@@ -22,6 +22,7 @@ const getProducts = async(page, count, cb) => {
       p.product_category AS category,
       p.product_default_price AS default_price
     FROM products AS p
+    ORDER BY p.product_id
     LIMIT $1 OFFSET $2
   `;
 
