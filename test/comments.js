@@ -30,7 +30,7 @@ describe('Product API Tests', () => {
   });
 
   it('should return all styles available for the given product when GET /products/:product_id/styles', function(done) { // Use regular function instead of arrow function
-    this.timeout(50000); // Now this should work
+    this.timeout(50000);
     const productId = 12;
     request(app)
       .get(`/products/${productId}/styles`)
@@ -49,13 +49,27 @@ describe('Product API Tests', () => {
         expect(style).to.have.property('default?');
         expect(style).to.have.property('photos').to.be.an('array');
         expect(style).to.have.property('skus').to.be.an('object');
+        expect(style.name).to.be.equal('Purple');
 
         done(); // Indicate that the test is done
       })
       .catch(err => {
         done(err); // Pass the error to done, so it will fail the test if there's an error
       });
-});
+    });
+
+  it('shoud return related product specified', async() => {
+    const productId = 1;
+    const res = await request(app).get(`/products/${productId}/related`);
+    const related = res.body;
+    // console.log(related);
+    expect(res.statusCode).to.be.eq(200);
+    expect(related).to.be.an('array');
+    expect(related.length).to.be.equal(4);
+
+  });
+
+
 
 
 
