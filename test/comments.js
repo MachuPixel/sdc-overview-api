@@ -16,40 +16,48 @@ describe('Product API Tests', () => {
     const productId = 11;
     const res = await request(app).get(`/products/${productId}`);
     const product = res.body;
-
     expect(res.statusCode).to.be.eq(200);
     expect(product).to.be.an('object');
     expect(product).to.have.property('id').equal(productId);
     expect(product).to.have.property('name');
+
     expect(product).to.have.property('slogan');
     expect(product).to.have.property('description');
     expect(product).to.have.property('category');
     expect(product).to.have.property('default_price');
     expect(product.features).to.be.an('array');
+    expect(product.default_price).to.be.eq(49);
   });
 
-  it('should returns the all styles available for the given product when GET /products/:product_id/styles', async() => {
-    const productId = 1;
-    const res = await request(app).get(`/products/${productId}/styles`);
-    const stylesResponse = res.body;
-    console.log(stylesResponse);
+  it('should return all styles available for the given product when GET /products/:product_id/styles', function(done) { // Use regular function instead of arrow function
+    this.timeout(50000); // Now this should work
+    const productId = 12;
+    request(app)
+      .get(`/products/${productId}/styles`)
+      .then((res) => {
+        const stylesResponse = res.body;
 
-    // expect(res.statusCode).to.be.eq(200);
-    // expect(stylesResponse).to.have.property('product_id').equal(productId);
-    // expect(stylesResponse).to.have.property('results').to.be.an('array');
+        expect(stylesResponse).to.have.property('product_id').equal(productId.toString());
+        expect(stylesResponse).to.have.property('results').to.be.an('array');
 
-    // const style = stylesResponse.results[0];
+        const style = stylesResponse.results[0];
 
-    // expect(style).to.have.property('style_id');
-    // expect(style).to.have.property('name');
-    // expect(style).to.have.property('original_price');
-    // expect(style).to.have.property('sale_price');
-    // expect(style).to.have.property('default?');
-    // expect(style).to.have.property('photos').to.be.an('array');
-    // expect(style).to.have.property('skus').to.be.an('object');
+        expect(style).to.have.property('style_id');
+        expect(style).to.have.property('name');
+        expect(style).to.have.property('original_price');
+        expect(style).to.have.property('sale_price');
+        expect(style).to.have.property('default?');
+        expect(style).to.have.property('photos').to.be.an('array');
+        expect(style).to.have.property('skus').to.be.an('object');
+
+        done(); // Indicate that the test is done
+      })
+      .catch(err => {
+        done(err); // Pass the error to done, so it will fail the test if there's an error
+      });
+});
 
 
-  }, 100000);
 
 
 });
