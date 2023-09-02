@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "dbtest": "node test/dbPerformance.test.js",
     "start": "nodemon server/index.js",
     "configure": "./bin/configuredb.sh"
   },
