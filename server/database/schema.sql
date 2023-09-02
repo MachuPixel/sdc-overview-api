@@ -19,6 +19,9 @@ CREATE TABLE features (
   CONSTRAINT fk_product FOREIGN KEY(product_id) REFERENCES products(product_id)
 );
 
+CREATE INDEX idx_features_product_id ON features (product_id);
+
+
 CREATE TABLE styles (
   style_id SERIAL PRIMARY KEY,
   product_id SERIAL,
@@ -28,6 +31,8 @@ CREATE TABLE styles (
   style_default BOOLEAN NOT NULL,
   CONSTRAINT fk_product FOREIGN KEY(product_id) REFERENCES products(product_id)
 );
+CREATE INDEX idx_styles_product_id ON styles (product_id);
+
 
 CREATE TABLE photos (
   photo_id SERIAL PRIMARY KEY,
@@ -36,6 +41,8 @@ CREATE TABLE photos (
   photo_thumbnail_url TEXT,
   CONSTRAINT fk_style FOREIGN KEY(style_id) REFERENCES styles(style_id)
 );
+CREATE INDEX idx_photos_style_id ON photos (style_id);
+
 
 CREATE TABLE stock (
   stock_id SERIAL PRIMARY KEY,
@@ -44,6 +51,8 @@ CREATE TABLE stock (
   stock_quantity INTEGER NOT NULL,
   CONSTRAINT fk_style FOREIGN KEY(style_id) REFERENCES styles(style_id)
 );
+CREATE INDEX idx_stock_style_id ON stock (style_id);
+
 
 CREATE TABLE related (
   related_id SERIAL PRIMARY KEY,
@@ -51,3 +60,5 @@ CREATE TABLE related (
   related_product_id SERIAL,
   CONSTRAINT fk_current_product FOREIGN KEY(current_product_id) REFERENCES products(product_id)
 );
+
+CREATE INDEX idx_related_current_product_id ON related (current_product_id);
