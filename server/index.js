@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser')
 const { getProducts, getFeatures, getStyles, getRelated } = require('./database/postgresdb.js')
-
+const port = process.env.PORT1 || 3000;
 const app = express();
 
 app.use(bodyParser.json())
@@ -74,8 +74,8 @@ app.get('/products/:product_id/related', (req, res) => {
 });
 
 
-app.listen(process.env.PORT1, () => {
-  console.log(`Listening at port ${process.env.PORT1}...`);
+app.listen(port, () => {
+  console.log(`Listening at port ${port}...`);
 });
 
 module.exports = app;
