@@ -30,7 +30,7 @@ const getProducts = async(page, count, cb) => {
     const productsResult = await pool.query(productsQuery, [count, offset]);
     const t1 = performance.now();
     const products = productsResult.rows;
-    console.log(`Call to getProducts took ${t1 - t0} milliseconds.`);
+    // console.log(`Call to getProducts took ${t1 - t0} milliseconds.`);
 
     cb(null, products);
 
@@ -65,7 +65,7 @@ const getFeatures = async (product_id, cb) => {
     const t0 = performance.now();
     const featuresResult = await pool.query(featuresQuery, [product_id]);
     const t1 = performance.now();
-    console.log(`Call to getFeatures took ${t1 - t0} milliseconds.`);
+    // console.log(`Call to getFeatures took ${t1 - t0} milliseconds.`);
 
     const features = featuresResult.rows[0];
     cb(null, features);
@@ -103,7 +103,7 @@ const getStyles = async (product_id, cb) => {
     const t0 = performance.now();
     const stylesResult = await pool.query(stylesQuery, [product_id]);
     const t1 = performance.now();
-    console.log(`Call to getStyles took ${t1 - t0} milliseconds.`);
+    // console.log(`Call to getStyles took ${t1 - t0} milliseconds.`);
 
     const styles = stylesResult.rows;
 
@@ -131,7 +131,7 @@ const getRelated = async (product_id, cb) => {
     const t0 = performance.now();
     const relatedResult = await pool.query(relatedQuery, [product_id]);
     const t1 = performance.now();
-    console.log(`Call to getRelated took ${t1 - t0} milliseconds.`);
+    // console.log(`Call to getRelated took ${t1 - t0} milliseconds.`);
 
 
     const relatedProductIDs = relatedResult.rows.map(row => row.related_product_id);
