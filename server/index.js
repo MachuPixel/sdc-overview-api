@@ -13,6 +13,10 @@ app.use(
     })
 )
 
+app.get('/loaderio-e608f3e033a5fc332272f24ec3989718.txt', function (req, res) {
+  res.send('loaderio-e608f3e033a5fc332272f24ec3989718');
+});
+
 // GET /products
 
 app.get('/products',(req, res) => {
