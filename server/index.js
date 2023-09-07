@@ -13,8 +13,8 @@ app.use(
     })
 )
 
-app.get('/loaderio-e608f3e033a5fc332272f24ec3989718.txt', function (req, res) {
-  res.send('loaderio-e608f3e033a5fc332272f24ec3989718');
+app.get('/loaderio-869df574dc066bb6d5921052b2774a51.txt', function (req, res) {
+  res.send('loaderio-869df574dc066bb6d5921052b2774a51');
 });
 
 // GET /products
