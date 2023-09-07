@@ -50,7 +50,7 @@ app.get('/products', cache, (req, res) => {
     if (err) {
       res.status(404).send('Error message');
     } else {
-      client.setex(req.url, 3600, JSON.stringify(data)); // cache the response for 1 hour
+      client.set(req.url, JSON.stringify(data), 'EX', 3600);  // cache the response for 1 hour
 
       res.send(data);
     }
@@ -65,7 +65,7 @@ app.get('/products/:product_id', cache, (req, res) => {
     if (err) {
       res.status(404).send('Error message');
     } else {
-      client.setex(req.url, 3600, JSON.stringify(data));
+      client.set(req.url, JSON.stringify(data), 'EX', 3600);
 
       res.send(data);
     }
@@ -81,7 +81,7 @@ app.get('/products/:product_id/styles', cache, (req, res) => {
     if (err) {
       res.status(404).send('Error message');
     } else {
-      client.setex(req.url, 3600, JSON.stringify(data));
+      client.set(req.url, JSON.stringify(data), 'EX', 3600);
 
       res.send(data);
     }
@@ -97,7 +97,7 @@ app.get('/products/:product_id/related', cache, (req, res) => {
     if (err) {
       res.status(404).send('Error message');
     } else {
-      client.setex(req.url, 3600, JSON.stringify(data));
+      client.set(req.url, JSON.stringify(data), 'EX', 3600);
 
       res.send(data);
     }
