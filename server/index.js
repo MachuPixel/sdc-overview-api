@@ -42,7 +42,7 @@ app.get('/loaderio-869df574dc066bb6d5921052b2774a51.txt', function (req, res) {
 
 // GET /products
 
-app.get('/products',(req, cache, res) => {
+app.get('/products', cache, (req, res) => {
   let page = parseInt(req.query.page, 10) || 1;
   let count = parseInt(req.query.count, 10) || 5;
 
@@ -59,7 +59,7 @@ app.get('/products',(req, cache, res) => {
 
 //GET /products/:product_id
 
-app.get('/products/:product_id',(req, cache, res) => {
+app.get('/products/:product_id', cache, (req, res) => {
   // console.log(req.params);
   getFeatures(req.params.product_id, (err, data) => {
     if (err) {
@@ -75,7 +75,7 @@ app.get('/products/:product_id',(req, cache, res) => {
 
 // GET /products/:product_id/styles
 
-app.get('/products/:product_id/styles', (req, cache, res) => {
+app.get('/products/:product_id/styles', cache, (req, res) => {
 
   getStyles(req.params.product_id, (err, data) => {
     if (err) {
@@ -91,7 +91,7 @@ app.get('/products/:product_id/styles', (req, cache, res) => {
 
 // GET /products/:product_id/related
 
-app.get('/products/:product_id/related', (req, cache, res) => {
+app.get('/products/:product_id/related', cache, (req, res) => {
 
   getRelated(req.params.product_id, (err, data) => {
     if (err) {
