@@ -1,17 +1,21 @@
 require('dotenv').config();
 
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const compression = require('compression');
+
 const { getProducts, getFeatures, getStyles, getRelated } = require('./database/postgresdb.js')
 const port = process.env.PORT1 || 3000;
 const app = express();
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(
     bodyParser.urlencoded({
         extended: true,
     })
-)
+);
+
+app.use(compression());
 
 app.get('/loaderio-869df574dc066bb6d5921052b2774a51.txt', function (req, res) {
   res.send('loaderio-869df574dc066bb6d5921052b2774a51');
