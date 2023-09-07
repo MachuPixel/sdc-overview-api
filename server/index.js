@@ -25,8 +25,7 @@ app.get('/products',(req, res) => {
 
   getProducts(page, count, (err, data) => {
     if (err) {
-      console.log(err);
-      res.status(404);
+      res.status(404).send('Error message');
     } else {
       res.send(data);
     }
@@ -39,8 +38,7 @@ app.get('/products/:product_id',(req, res) => {
   // console.log(req.params);
   getFeatures(req.params.product_id, (err, data) => {
     if (err) {
-      console.log(err);
-      res.status(404);
+      res.status(404).send('Error message');
     } else {
       res.send(data);
     }
@@ -54,8 +52,7 @@ app.get('/products/:product_id/styles', (req, res) => {
 
   getStyles(req.params.product_id, (err, data) => {
     if (err) {
-      console.log(err);
-      res.status(404);
+      res.status(404).send('Error message');
     } else {
       res.send(data);
     }
@@ -69,8 +66,7 @@ app.get('/products/:product_id/related', (req, res) => {
 
   getRelated(req.params.product_id, (err, data) => {
     if (err) {
-      console.log(err);
-      res.status(404);
+      res.status(404).send('Error message');
     } else {
       res.send(data);
     }
