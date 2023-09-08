@@ -6,7 +6,7 @@ Our 2 software engineers rebuilt back-end API service for a monolithic to servic
 
 Backend Development: Node.js | Express | Postgres | NGINX
 </br>
-Deployement: Docker | AWS EC2
+Deployment: Docker | AWS EC2
 </br>
 Testing: Mocha | SuperTest | K6 | Loader.io
 
@@ -24,6 +24,20 @@ Testing: Mocha | SuperTest | K6 | Loader.io
  ---
 
 ## Usage
+### List Products
+  Retrieves the list of products.
+
+  `GET /products`
+  
+  *Query Parameters*
+
+  | Parameter	 | Type      | Description                                               |
+  | ---------- | :-------: | --------------------------------------------------------- |
+  | page |  integer  | Selects the page of results to return. Default 1. |
+  | count |  integer  | Specifies how many results per page to return. Default 5. |
+
+  Response: `Status: 200 OK`
+
   ---
 
 ## DB Initialization and ETL Quaries in Postgres
