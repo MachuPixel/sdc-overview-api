@@ -1,9 +1,9 @@
-# Retail Products| E-Commerce Backend API Revamp: Microservices Architecture
+# Retail Products API | E-Commerce Backend API Revamp: Microservices Architecture
 
 Welcome to our revamped backend API service for our e-commerce site! Our team of two talented software engineers undertook a significant transformation to transition from a monolithic structure to a modern, service-oriented microservices architecture. This transition was designed to not only support our current system but to amplify its capabilities for the future.
 
 ## 🔥 Highlights:
-- **Optimized Performance**: One of the services, which I had the pleasure of developing, has been meticulously optimized to handle production traffic seamlessly at a rate of **5000 requests per second (RPS)**.
+- **Optimized Performance**: The products service that I developed has been meticulously optimized to handle production traffic seamlessly at a rate of **5000 requests per second (RPS)**.
 - **Swift Response**: The same service consistently guarantees a response time of **less than 25 milliseconds**.
 - **Robust & Reliable**: An outstanding **0% error rate** has been achieved, ensuring reliability and smooth user experiences.
 
@@ -109,7 +109,7 @@ Our e-commerce platform boasts a vast dataset:
 
   ---
 
-## 🛠 DB Initialization and ETL Quaries in Postgres
+## 🛠 DB Initialization and ETL Queries in Postgres
 
 ### Local: Create and seed the database:
 
@@ -128,8 +128,44 @@ psql -U node_user overview < ./server/database/largeseeder.sql
 psql overview -U node_user
 ```
 ---
-## 📦 Installation
-  1. In the terminal inside, run `npm start` to start server
-  2. Test by typing `http://localhost:3000/products` in the Postman to see the response.
+## 🚀 Quickstart
+To get started with our API:
+
+  1. **Clone the repository**:
+     ```
+     git clone https://github.com/MachuPixel/sdc-overview-api.git
+     ```
+  2. **Navigate to the project directory**:
+     ```
+     cd sdc-overview-api
+     ```
+  3. **Install the dependencies**:
+     ```
+     npm install
+     ```
+  4. **Start the service**:
+     ```
+     npm start
+     ```
+  5. **Test the API**:
+   Use Postman or any API client of your choice to test the endpoints. Here are some to get started:
+   
+   - **Fetch all products**:
+     ```
+     http://localhost:3000/products
+     ```
+   - **Fetch a specific product by its ID**:
+     ```
+     http://localhost:3000/products/${product_id}
+     ```
+   - **Fetch styles for a specific product**:
+     ```
+     http://localhost:3000/products/${product_id}/styles
+     ```
+   - **Fetch related products for a specific product**:
+     ```
+     http://localhost:3000/products/${product_id}/related
+     ```
+
 
 ---
