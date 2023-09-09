@@ -28,7 +28,7 @@ Testing: Mocha | SuperTest | K6 | Loader.io
 <img width="1078" alt="Screenshot 2023-09-08 at 8 37 15 PM" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/0db20c6a-7de7-49ee-93db-09539bc549ed">
 
 ### Stress Test Results via Loader.io
-<img width="1078" alt="Untitled (1)" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/41e0b25f-ea37-48ab-a93a-0a68cfa73bdf">
+<img width="1078" alt="Screenshot 2023-09-09 at 12 41 54 AM" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/3adb6c94-ab52-4e7c-8cbc-872f77884da3">
 
 <img width="1078" alt="Untitled (1)" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/02770ea8-4d11-4f3e-b3ba-b8fd5aa70f3e">
 
