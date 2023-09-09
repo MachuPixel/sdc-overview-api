@@ -1,6 +1,7 @@
 # Retail Products API | Back-end services for e-commerce web app
 
-Our 2 software engineers rebuilt back-end API service for a monolithic to service-oriented micorservices to support our existing e-commerce site in this project. The service I built was scaled to meet the demands of production traffic with 5000RPS with < 25ms response time with 0% error rate.
+
+In this project, our two software engineers revamped the backend API service, transitioning it from a monolithic structure to a service-oriented microservices architecture. This transformation was aimed at bolstering support for our existing e-commerce site. The service I personally developed was meticulously optimized, enabling it to effortlessly handle production traffic at a rate of 5000 requests per second (RPS). It consistently maintained a response time of less than 25 milliseconds while boasting an impressive 0% error rate.
 
 ## Techonologies Used
 
