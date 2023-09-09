@@ -112,6 +112,10 @@ Our e-commerce platform boasts a vast dataset:
 ## 🛠 DB Initialization and ETL Queries in Postgres
 
 ### Local: Create and seed the database:
+To get started, download the data from:
+`
+https://drive.google.com/drive/folders/1Gqxt7Tw0I50OG2dn4LncHAJ_x_BnWuRX
+`
 
 1. Running these command in the terminal
 ```
