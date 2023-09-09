@@ -21,6 +21,12 @@ Testing: Mocha | SuperTest | K6 | Loader.io
 ---
 
 ## System Design
+### Database Design
+<img width="1308" alt="RDBMS schema" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/bb6122b0-84eb-4935-be58-85f9ae455dc0">
+
+### Architecture
+
+
  ---
 
 ## Usage
@@ -37,6 +43,50 @@ Testing: Mocha | SuperTest | K6 | Loader.io
   | count |  integer  | Specifies how many results per page to return. Default 5. |
 
   Response: `Status: 200 OK`
+  <img width="1078" alt="Screenshot 2023-09-08 at 7 47 43 PM" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/ca1c19d3-09cf-4faf-bfe3-87c497121c73">
+
+### Product Information
+  Returns all product level information for a specified product id.
+
+  `GET /products/:product_id`
+  
+  *Query Parameters*
+
+  | Parameter	 | Type      | Description                                               |
+  | ---------- | :-------: | --------------------------------------------------------- |
+  | product_id |  integer  | Required ID of the Product requested |
+
+  Response: `Status: 200 OK`
+  <img width="1078" alt="Screenshot 2023-09-08 at 7 50 43 PM" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/54fe8794-fe35-49ec-9dc9-e530aabdf9eb">
+
+### Product Styles
+  Returns the all styles available for the given product.
+  
+  `GET /products/:product_id/styles`
+  
+  *Query Parameters*
+
+  | Parameter	 | Type      | Description                                               |
+  | ---------- | :-------: | --------------------------------------------------------- |
+  | product_id |  integer  | Required ID of the Product requested |
+
+  Response: `Status: 200 OK`
+  <img width="1078" alt="Screenshot 2023-09-08 at 7 53 14 PM" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/b9a57e77-8b70-4b32-b0c3-e47a01933292">
+  <img width="1078" alt="Untitled (1)" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/8bdde80a-0fa5-4294-88ba-49df5859eb21">
+
+### Related Products
+  Returns the id's of products related to the product specified.
+  
+  `GET /products/:product_id/related`
+  
+  *Query Parameters*
+
+  | Parameter	 | Type      | Description                                               |
+  | ---------- | :-------: | --------------------------------------------------------- |
+  | product_id |  integer  | Required ID of the Product requested |
+
+  Response: `Status: 200 OK`
+<img width="1078" alt="Screenshot 2023-09-08 at 7 55 31 PM" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/0eff8836-893a-4ee3-99ad-934104ef1f7d">
 
   ---
 
@@ -44,17 +94,17 @@ Testing: Mocha | SuperTest | K6 | Loader.io
 
 ### Local: Create and seed the database:
 
-Running these command in the terminal
+1. Running these command in the terminal
 ```
 npm run configure
 ```
 
-Running the following in psql command line import data to the database:
+2. Running the following in psql command line import data to the database:
 ```
 psql -U node_user overview < ./server/database/largeseeder.sql
 ```
 
-Then you can using following command to check the new database and the tables
+3. Then you can using following command to check the new database and the tables
 ```
 psql overview -U node_user
 ```
