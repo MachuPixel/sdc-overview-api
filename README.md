@@ -26,8 +26,8 @@ Our e-commerce platform boasts a vast dataset:
 ## Table of Contents
   - <a href='#-system-design'>System Design</a>
   - <a href='#️-usage'>Usage</a>
-  - <a href='#-db-initialization-and-etl-quaries-in-postgres'>DB Initialization and ETL Quaries in Postgres</a>
-  - <a href='#-installation'>Installation</a>
+  - <a href='#-db-initialization-and-etl-queries-in-postgres'>DB Initialization and ETL Queries in Postgres</a>
+  - <a href='#-quickstart'>Quickstart</a>
   - <a href='#other-services'>Other Services</a>
  
 ---
@@ -171,5 +171,5 @@ To get started with our API:
      http://localhost:3000/products/${product_id}/related
      ```
 
-
 ---
+##  Other Services
