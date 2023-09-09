@@ -1,6 +1,6 @@
 # Retail Products API | Back-end services for e-commerce web app
 
-Our 2 software engineers rebuilt back-end API service for a monolithic to service-oriented micorservices to support our existing e-commerce site in this project. The service I built was scaled to meet the demands of production traffic with 500RPS with < 25ms response time with 0% error rate.
+Our 2 software engineers rebuilt back-end API service for a monolithic to service-oriented micorservices to support our existing e-commerce site in this project. The service I built was scaled to meet the demands of production traffic with 5000RPS with < 25ms response time with 0% error rate.
 
 ## Techonologies Used
 
@@ -28,10 +28,10 @@ Testing: Mocha | SuperTest | K6 | Loader.io
 <img width="1078" alt="Screenshot 2023-09-08 at 8 37 15 PM" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/0db20c6a-7de7-49ee-93db-09539bc549ed">
 
 ### Stress Test Results via Loader.io
-<img width="1078" alt="Untitled (1)" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/c3253783-a524-4163-9e36-2d3a104aad54">
+<img width="1078" alt="Untitled (1)" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/41e0b25f-ea37-48ab-a93a-0a68cfa73bdf">
 
+<img width="1078" alt="Untitled (1)" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/02770ea8-4d11-4f3e-b3ba-b8fd5aa70f3e">
 
-<img width="1078" alt="Untitled (1) copy" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/065d2204-48a9-4d9e-b5f6-f3fa4f8c3f9a">
 
 
  ---
