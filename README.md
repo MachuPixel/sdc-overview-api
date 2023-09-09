@@ -1,27 +1,38 @@
-# Retail Products API | Back-end services for e-commerce web app
+# Retail Products| E-Commerce Backend API Revamp: Microservices Architecture
 
+Welcome to our revamped backend API service for our e-commerce site! Our team of two talented software engineers undertook a significant transformation to transition from a monolithic structure to a modern, service-oriented microservices architecture. This transition was designed to not only support our current system but to amplify its capabilities for the future.
 
-In this project, our two software engineers revamped the backend API service, transitioning it from a monolithic structure to a service-oriented microservices architecture. This transformation was aimed at bolstering support for our existing e-commerce site. The service I personally developed was meticulously optimized, enabling it to effortlessly handle production traffic at a rate of 5000 requests per second (RPS). It consistently maintained a response time of less than 25 milliseconds while boasting an impressive 0% error rate.
+## 🔥 Highlights:
+- **Optimized Performance**: One of the services, which I had the pleasure of developing, has been meticulously optimized to handle production traffic seamlessly at a rate of **5000 requests per second (RPS)**.
+- **Swift Response**: The same service consistently guarantees a response time of **less than 25 milliseconds**.
+- **Robust & Reliable**: An outstanding **0% error rate** has been achieved, ensuring reliability and smooth user experiences.
 
-## Techonologies Used
+## 📊 Data Overview:
+Our e-commerce platform boasts a vast dataset:
+- **Millions of Products**: Our expansive catalog ensures users have a plethora of options to choose from.
+- **Rich Product Styles**: Each product on our platform is enriched with **around 10 unique styles**, offering depth and diversity.
+- **SKU Inventory Table**: For each style, we meticulously track millions of products through our SKUs inventory table, ensuring stock accuracy and availability.
+- **Extensive Photo Dataset**: We understand the importance of visuals in e-commerce. Hence, every single style for our products is accompanied by a rich photo dataset to provide clear and detailed imagery.
+- **Related Products**: Dive deeper into our product range with our related products table. Each individual product showcases related items, enhancing user browsing and shopping experiences.
 
-Backend Development: Node.js | Express | Postgres | NGINX
-</br>
-Deployment: Docker | AWS EC2
-</br>
-Testing: Mocha | SuperTest | K6 | Loader.io
+---
+
+## 🛠 Technologies Used:
+- **Backend Development**: Node.js | Express | Postgres | NGINX
+- **Deployment**: Docker | AWS EC2
+- **Testing**: Mocha | SuperTest | K6 | Loader.io
 
 ---
 ## Table of Contents
-  - <a href='#system-design'>System Design</a>
-  - <a href='#usage'>Usage</a>
-  - <a href='#db-initialization-and-etl-quaries-in-postgres'>DB Initialization and ETL Quaries in Postgres</a>
-  - <a href='#installation'>Installation</a>
+  - <a href='#-system-design'>System Design</a>
+  - <a href='#️-usage'>Usage</a>
+  - <a href='#-db-initialization-and-etl-quaries-in-postgres'>DB Initialization and ETL Quaries in Postgres</a>
+  - <a href='#-installation'>Installation</a>
   - <a href='#other-services'>Other Services</a>
  
 ---
 
-## System Design
+## 🏗 System Design
 ### Database Design
 <img width="1308" alt="RDBMS schema" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/bb6122b0-84eb-4935-be58-85f9ae455dc0">
 
@@ -37,7 +48,7 @@ Testing: Mocha | SuperTest | K6 | Loader.io
 
  ---
 
-## Usage
+## ⚙️ Usage
 ### List Products
   Retrieves the list of products.
 
@@ -98,7 +109,7 @@ Testing: Mocha | SuperTest | K6 | Loader.io
 
   ---
 
-## DB Initialization and ETL Quaries in Postgres
+## 🛠 DB Initialization and ETL Quaries in Postgres
 
 ### Local: Create and seed the database:
 
@@ -117,7 +128,7 @@ psql -U node_user overview < ./server/database/largeseeder.sql
 psql overview -U node_user
 ```
 ---
-## Installation
+## 📦 Installation
   1. In the terminal inside, run `npm start` to start server
   2. Test by typing `http://localhost:3000/products` in the Postman to see the response.
 
