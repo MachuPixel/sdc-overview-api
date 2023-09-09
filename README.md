@@ -173,3 +173,7 @@ To get started with our API:
 
 ---
 ##  Other Services
+Please reference other API Services that make up the other part of the e-commerce app API:
+ - <a href='https://github.com/MachuPixel/QA-service'>Questions & Answers</a> by [Alisa Bondar](https://github.com/alisabondar)
+
+---
