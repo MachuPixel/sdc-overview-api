@@ -4,7 +4,7 @@ Welcome to our revamped backend API service for our e-commerce site! Our team of
 
 ## 🔥 Highlights:
 - **Optimized Performance**: The products service that I developed has been meticulously optimized to handle production traffic seamlessly at a rate of **5000 requests per second (RPS)**.
-- **Swift Response**: The same service consistently guarantees a response time of **less than 25 milliseconds**.
+- **Swift Response**: The same service consistently guarantees a response time of **less than 15 milliseconds**.
 - **Robust & Reliable**: An outstanding **0% error rate** has been achieved, ensuring reliability and smooth user experiences.
 
 ## 📊 Data Overview:
