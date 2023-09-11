@@ -37,7 +37,7 @@ Our e-commerce platform boasts a vast dataset:
 <img width="1308" alt="RDBMS schema" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/bb6122b0-84eb-4935-be58-85f9ae455dc0">
 
 ### Architecture
-<img width="1078" alt="Screenshot 2023-09-08 at 8 37 15 PM" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/0db20c6a-7de7-49ee-93db-09539bc549ed">
+<img width="1078" alt="image" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/08c59bfb-27be-4d4f-9a16-31079c3a8458">
 
 ### Stress Test Results via Loader.io
 <img width="1078" alt="Screenshot 2023-09-09 at 12 41 54 AM" src="https://github.com/MachuPixel/sdc-overview-api/assets/136006024/3adb6c94-ab52-4e7c-8cbc-872f77884da3">
